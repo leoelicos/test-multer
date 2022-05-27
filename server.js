@@ -74,10 +74,9 @@ function init() {
 	app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
 
 	app.post('/uploads', upload.single('upload'), function (req, res) {
-		req.file.filename += '.jpg';
-		req.file.path += '.jpg';
 		console.log(req.file);
-		res.status(200).send('Successful!');
+
+		res.status(200).sendFile(`<html><body>Success!<img src = "${res.file.path}"></img></body></html>`);
 	});
 
 	// implement server
