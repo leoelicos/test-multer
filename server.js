@@ -16,7 +16,7 @@ const fileFilter = (req, file, cb) => {
 	// The function should call `cb` with a boolean
 	// to indicate if the file should be accepted
 	// console.log(req);
-	console.log(file);
+	// console.log(file);
 	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
 		// req.filename += '.jpg';
 		cb(null, true);
@@ -76,8 +76,8 @@ function init() {
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		req.file.filename += '.jpg';
 		req.file.path += '.jpg';
-		console.log(req.file);
-		console.log(res);
+		// console.log(req.file);
+		// console.log(res);
 	});
 
 	// implement server
