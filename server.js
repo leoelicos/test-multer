@@ -81,7 +81,7 @@ function init() {
 	});
 
 	// implement wildcard route to direct users to index.html
-	app.get('/app/public/data/uploads/:id', (req, res) => res.send('The image is hosted here:', path.join('https://leoelicos-multer.herokuapp.com', __dirname, './public/data/uploads/', req.params.id)));
+	app.get('/app/public/data/uploads/:id', (req, res) => res.sendFile(path.join(__dirname, './public/data/uploads/', req.params.id)));
 
 	// implement wildcard route to direct users to index.html
 	app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
