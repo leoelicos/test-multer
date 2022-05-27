@@ -16,7 +16,7 @@ const fileFilter = (req, file, cb) => {
 	// The function should call `cb` with a boolean
 	// to indicate if the file should be accepted
 	// console.log(req);
-	// console.log(file);
+	console.log(file);
 	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
 		// req.filename += '.jpg';
 		cb(null, true);
@@ -26,14 +26,7 @@ const fileFilter = (req, file, cb) => {
 	}
 };
 
-var storage = multer.diskStorage({
-	destination: './public/data/uploads/',
-	filename: function (req, file, cb) {
-		cb(null, Date.now() + path.extname(file.originalname)); //Appending extension
-	}
-});
-
-var upload = multer({ storage: storage, fileFilter });
+const upload = multer({ dest: './public/data/uploads/', fileFilter });
 
 // path is a Node standard library package which provides utilities for working with file and directory paths
 const path = require('path');
@@ -76,8 +69,7 @@ function init() {
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		req.file.filename += '.jpg';
 		req.file.path += '.jpg';
-		// console.log(req.file);
-		// console.log(res);
+		console.log(req.file);
 	});
 
 	// implement server
