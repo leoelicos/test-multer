@@ -26,7 +26,14 @@ const fileFilter = (req, file, cb) => {
 	}
 };
 
-const upload = multer({ dest: './public/data/uploads/', fileFilter });
+var storage = multer.diskStorage({
+	destination: './public/data/uploads/',
+	filename: function (req, file, cb) {
+		cb(null, Date.now() + path.extname(file.originalname)); //Appending extension
+	}
+});
+
+const upload = multer({ storage, fileFilter });
 
 // path is a Node standard library package which provides utilities for working with file and directory paths
 const path = require('path');
@@ -70,6 +77,7 @@ function init() {
 		req.file.filename += '.jpg';
 		req.file.path += '.jpg';
 		console.log(req.file);
+		res.status(200).send('Successful!');
 	});
 
 	// implement server
