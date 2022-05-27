@@ -76,7 +76,7 @@ function init() {
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		console.log(req.file);
 
-		res.status(200).sendFile(`<html><body>Success!<img src = "${res.file.path}"></img></body></html>`);
+		res.status(200).sendFile(`<html><body>Success!<img src = "${req.file.path}"></img></body></html>`);
 	});
 
 	// implement server
