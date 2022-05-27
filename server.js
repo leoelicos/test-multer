@@ -9,7 +9,6 @@ Copyright Leo Wong 2022
 // express is an npm library package which links client requests to server responses
 const express = require('express');
 
-const path = require('path');
 // express middleware to support uploading of files
 const multer = require('multer');
 
