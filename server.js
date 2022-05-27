@@ -21,7 +21,7 @@ const fileFilter = (req, file, cb) => {
 		// req.filename += '.jpg';
 		cb(null, true);
 	} else {
-		alert('Invalid file format - use JPG/JPEG only');
+		// alert('Invalid file format - use JPG/JPEG only');
 		cb(null, false);
 	}
 };
