@@ -74,9 +74,11 @@ function init() {
 	app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
 
 	app.post('/uploads', upload.single('upload'), function (req, res) {
-		console.log(req.file);
-		console.log('The file path is' + `<html><body>Success!<img src = "${path.join('https://leoelicos-multer.herokuapp.com/' + __dirname, req.file.path)}"></img></body></html>`);
-		res.status(200).sendFile(`<html><body>Success!<img src = "${path.join('https://leoelicos-multer.herokuapp.com/' + __dirname, req.file.path)}"></img></body></html>`);
+		console.log('req.file = ', req.file);
+		const src = path.join(__dirname, req.file.path);
+		const html = `<html><body>Success!<img src="${src}" alt="user-upload"></body></html>`;
+		console.log('src = ', src);
+		res.status(200).sendFile(src);
 	});
 
 	// implement server
