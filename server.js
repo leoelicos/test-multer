@@ -76,11 +76,16 @@ function init() {
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		console.log('req.file = ', req.file);
 		const src = path.join(__dirname, req.file.path);
-		const html = `<html><body>Success!<img src="${src}" alt="user-upload"></body></html>`;
+		// const html = `<html><body>Success!<img src="${src}" alt="user-upload"></body></html>`;
 		console.log('src = ', src);
-		res.status(200).sendFile(src);
-	});
 
+		/* var options = {
+			root: path.join(__dirname)
+	  }; */
+
+		//   var fileName = req.file.path;
+		res.status(200).send(path.join(__dirname, req.file.path));
+	});
 	// implement server
 	app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT} 🚀`));
 }
