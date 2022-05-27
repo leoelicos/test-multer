@@ -9,6 +9,7 @@ Copyright Leo Wong 2022
 // express is an npm library package which links client requests to server responses
 const express = require('express');
 
+const path = require('path');
 // express middleware to support uploading of files
 const multer = require('multer');
 
@@ -76,7 +77,7 @@ function init() {
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		console.log(req.file);
 
-		res.status(200).sendFile(`<html><body>Success!<img src = "${req.file.path}"></img></body></html>`);
+		res.status(200).sendFile(`<html><body>Success!<img src = "${path.join(__dirname, req.file.path)}"></img></body></html>`);
 	});
 
 	// implement server
