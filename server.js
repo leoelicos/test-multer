@@ -70,9 +70,6 @@ function init() {
 	// implement GET Route for notes page
 	app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/assets/pages/notes.html')));
 
-	// implement wildcard route to direct users to index.html
-	app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
-
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		console.log(req.file);
 		const src = path.join(__dirname, req.file.path);
@@ -82,6 +79,12 @@ function init() {
 
 		res.status(200).json({ path: src });
 	});
+
+	// implement wildcard route to direct users to index.html
+	app.get('/app/public/data/uploads/:id', (req, res) => res.sendFile(path.join(__dirname, './public/data/uploads/', req.params.id)));
+
+	// implement wildcard route to direct users to index.html
+	app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
 
 	// implement server
 	app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT} 🚀`));
