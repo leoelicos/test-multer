@@ -78,7 +78,7 @@ function init() {
 		const src = path.join(__dirname, req.file.path);
 		const html = `<html><body>Success!<img src="${src}" alt="user-upload"></body></html>`;
 		console.log('src = ', src);
-		res.status(200).sendFile(html);
+		res.status(200).sendFile(src);
 	});
 
 	// implement server
