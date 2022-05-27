@@ -1,0 +1,27 @@
+{
+	"name": "bcs-11-note-taker",
+	"version": "1.0.0",
+	"description": "Note taker using Express and Heroku",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js",
+		"nodemon": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/leoelicos/bcs-11-note-taker.git"
+	},
+	"author": "Leo Wong",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/leoelicos/bcs-11-note-taker/issues"
+	},
+	"homepage": "https://github.com/leoelicos/bcs-11-note-taker#readme",
+	"main": "server.js",
+	"dependencies": {
+		"express": "^4.17.1",
+		"multer": "^1.4.4",
+		"nodemon": "^2.0.16",
+		"uuid": "^8.3.2"
+	}
+}

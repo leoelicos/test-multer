@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Note 1 (Example)",
+        "text": "Text for Note 1",
+        "note_id": "ce9ececc-7bbc-4a17-ae05-e28ea1174ea1"
+    },
+    {
+        "title": "Note 2 (Example)",
+        "text": "Text for Note 2",
+        "note_id": "cdb123a7-84f6-4975-b14d-c8dafc1210ca"
+    },
+    {
+        "title": "Hello",
+        "text": "I'm a bear",
+        "note_id": "8d8b0226-48bf-4e1d-81b0-34f0514a198c"
+    }
+]
