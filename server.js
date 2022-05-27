@@ -75,8 +75,8 @@ function init() {
 
 	app.post('/uploads', upload.single('upload'), function (req, res) {
 		console.log(req.file);
-
-		res.status(200).sendFile(`<html><body>Success!<img src = "${path.join(__dirname, req.file.path)}"></img></body></html>`);
+		console.log('The file path is' + `<html><body>Success!<img src = "${path.join('https://leoelicos-multer.herokuapp.com/' + __dirname, req.file.path)}"></img></body></html>`);
+		res.status(200).sendFile(`<html><body>Success!<img src = "${path.join('https://leoelicos-multer.herokuapp.com/' + __dirname, req.file.path)}"></img></body></html>`);
 	});
 
 	// implement server
