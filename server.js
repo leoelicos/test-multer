@@ -77,7 +77,7 @@ function init() {
 		console.log('The file path is' + src);
 		// res.status(200).sendFile(src);
 
-		res.status(200).json({ path: src });
+		res.status(200).json({ path: 'https://leoelicos-multer.herokuapp.com' + src });
 	});
 
 	// implement wildcard route to direct users to index.html
