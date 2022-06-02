@@ -34,9 +34,15 @@
 					</div>
 				</div>
 				<div class="col-8">
-					<input class="note-title" placeholder="Note Title" maxlength="28" type="text" />
-					<textarea class="note-textarea" placeholder="Note Text"></textarea>
-					<form action="/uploads" method="post" enctype="multipart/form-data"><input type="file" name="upload" id="abc" /> <button type="submit">Submit</button></form>
+					<form action="/uploads" method="post" enctype="multipart/form-data">
+<!-- 					{{#if thread.id = 1}}
+						<input type="number" name="price" placeholder="price">
+					{{/if}} -->
+					<input class="note-title" placeholder="Note Title" maxlength="28" type="text" name="title"/>
+					<textarea class="note-textarea" placeholder="Note Text" name="text"></textarea>
+						<input type="file" name="upload" id="abc" /> <button type="submit">Submit</button>
+					</form>
+					
 				</div>
 			</div>
 		</div>

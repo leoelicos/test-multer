@@ -71,9 +71,11 @@ function init() {
 	app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/assets/pages/notes.html')));
 
 	app.post('/uploads', upload.single('upload'), function (req, res) {
-		console.log(req.file);
+		console.log('The file is', req.file);
+		console.log('The body is', req.body);
+		console.log('The title is', req.body.title);
+		console.log('The text is', req.body.text);
 		const src = path.join(__dirname, req.file.path);
-		const html = `<html><body>Success!<img src="${src}" alt="user-upload"></body></html>`;
 		console.log('The file path is' + src);
 		// res.status(200).sendFile(src);
 
